@@ -15,14 +15,17 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": [
-    "dist/"
-  ],
+  "ignorePatterns": ["/dist", "/node_modules", ".husky", ".storybook", ".loki"],
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
