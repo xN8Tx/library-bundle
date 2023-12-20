@@ -5,6 +5,7 @@ import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import sass from 'rollup-plugin-sass';
 
 import packageJson from './package.json';
 
@@ -26,6 +27,13 @@ export default [
         extract: false,
         modules: true,
         use: ['sass'],
+      }),
+      sass({
+        include: 'src/scss/index.scss',
+        output: 'dist/cjs/style.min.css',
+        options: {
+          outputStyle: 'compressed',
+        },
       }),
       peerDepsExternal(),
       resolve(),
