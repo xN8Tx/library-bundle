@@ -1,4 +1,4 @@
-<h1 align="center"> Boilerplate for TS React UI libraryr</h1>
+<h1 align="center">TypeScript React Library Bundle</h1>
 <p align="center">Boilerplate to react typeScript library bundle with Storybook Loki and Jest.</p>
 
 ---
@@ -24,23 +24,22 @@
 
 ## Getting started
 
-1. Clone or install repository to your project
-2. Install packages
+1. Create project by
 
 ```
-  npm install
-  or
-  yarn
+  npx ts-rlb lib-name
 ```
 
-3. Edit if you need `.env` file
-4. Start storybook by
+2. If you need edit `.env` file.
+3. Start development by
 
 ```
   npm run storybook
-  or
-  yarn storybook
 ```
 
 5. Create your components in `src` folder
 6. Build your project by
+
+```
+  npm run build
+```
