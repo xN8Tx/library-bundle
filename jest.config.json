@@ -1,5 +1,11 @@
 {
+  "setupFilesAfterEnv": ["./jest.setup.ts"],
+  "clearMocks": true,
   "testEnvironment": "jsdom",
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
   "moduleNameMapper": {
     "\\.(css|less|scss|sass)$": "<rootDir>/node_modules/jest-css-modules"
   }

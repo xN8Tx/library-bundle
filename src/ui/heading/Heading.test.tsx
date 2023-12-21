@@ -1,12 +1,11 @@
 import React from 'react';
-import '@testing-library/jest-dom';
+
 import { cleanup, render, screen } from '@testing-library/react';
 
 import Heading from './Heading';
 
 describe('Heading', () => {
   afterEach(() => cleanup());
-
   test('Should render', () => {
     render(
       <Heading color='primary' size='large'>
