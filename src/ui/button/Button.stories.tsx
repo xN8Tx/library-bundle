@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Large: Story = {
   args: {
-    children: 'Messages',
+    children: 'Welcome to ts-rlb',
     color: 'primary',
     onClick: () => console.log('Hello world!'),
   },
@@ -24,7 +24,7 @@ export const Large: Story = {
 
 export const Medium: Story = {
   args: {
-    children: 'Messages',
+    children: 'Welcome to ts-rlb',
     color: 'primary',
     onClick: () => console.log('Hello world!'),
   },
@@ -32,7 +32,7 @@ export const Medium: Story = {
 
 export const Small: Story = {
   args: {
-    children: 'Messages',
+    children: 'Welcome to ts-rlb',
     color: 'primary',
     onClick: () => console.log('Hello world!'),
   },
