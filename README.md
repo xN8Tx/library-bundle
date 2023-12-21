@@ -1,6 +1,6 @@
 # Boilerplate for TS React UI library
 
-## Boilerplate to react typeScript library bundle with Storybook Loki and Jest.
+Boilerplate to react typeScript library bundle with Storybook Loki and Jest.
 
 ---
 
