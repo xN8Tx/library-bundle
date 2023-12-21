@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Typescript React Library Bundle. Work with storybook, loki and jest. Powered by Rollup",
   "main": "./dist/cjs/index.js",
+  "bin": "./bin/cli.js",
   "files": [
     "dist"
   ],
