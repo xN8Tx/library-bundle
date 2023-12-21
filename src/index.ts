@@ -1,2 +1,3 @@
-import './styles/index.scss';
-export * from './ui/Heading';
+import './scss/index.scss';
+
+export * from './ui';

@@ -4,3 +4,4 @@
 npm run lint
 npm run build-storybook
 npm run loki
+npm run build-test

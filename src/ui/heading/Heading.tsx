@@ -8,7 +8,7 @@ export interface IHeading {
   color: 'primary' | 'secondary';
 }
 
-export function Heading({
+export default function Heading({
   children,
   size,
   color,

@@ -22,11 +22,11 @@ export default [
     plugins: [
       typescript({
         tsconfig: './tsconfig.json',
+        exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts'],
       }),
       postcss({
         extract: false,
         modules: true,
-        use: ['sass'],
       }),
       sass({
         include: 'src/scss/index.scss',

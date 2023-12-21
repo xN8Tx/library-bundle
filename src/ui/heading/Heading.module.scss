@@ -1,5 +1,7 @@
+@import 'src/scss/index.scss';
+
 .heading {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  @include text-mixin;
 }
 
 .small {

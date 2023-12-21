@@ -1,0 +1,7 @@
+@import 'src/scss/index.scss';
+
+.Button {
+  @include text-mixin;
+  width: 150px;
+  height: 40px;
+}
