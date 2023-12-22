@@ -3,7 +3,7 @@
 import { execSync } from "child_process";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-import fse from "fs-extra";
+import fs from "fs";
 
 const useCommand = async (command) => {
   try {
@@ -26,24 +26,52 @@ const PROJECT_PATH = path.join(process.cwd(), PROJECT_NAME);
 
 // Commands
 const installDepends = `cd ${PROJECT_PATH} && npm install`;
-const moveFiles = async () => {
-  try {
-    await fse.ensureDir(PROJECT_PATH); // check if we have dir if not create
-    await fse.copy(LIBRARY_TEMPLATE_PATH, PROJECT_PATH);
-    return true;
-  } catch (err) {
-    console.log("⚠️ Error copying files. Error:", err);
-    return false;
+
+const createDirectory = async (folder) => {
+  const isDirectory = new Promise((resolve, reject) => {
+    fs.stat(folder, (err) => {
+      if (err) return resolve(false);
+      return resolve(true);
+    });
+  });
+
+  if (!(await isDirectory)) {
+    fs.mkdirSync(folder);
   }
 };
+
+const copyDirectory = async (template, project) => {
+  try {
+    await createDirectory(project);
+    const files = fs.readdirSync(template);
+
+    await files.forEach(async (file) => {
+      const libraryPath = path.join(template, file);
+      const projectPath = path.join(project, file);
+
+      const stats = fs.statSync(libraryPath);
+
+      if (stats.isFile()) {
+        fs.copyFileSync(libraryPath, projectPath);
+      } else if (stats.isDirectory()) {
+        await copyDirectory(libraryPath, projectPath);
+      }
+    });
+  } catch (error) {
+    console.log("⚠️ Error copying files. Error:", err);
+    process.exit(-1);
+  }
+};
+
+// await copyDirectory(LIBRARY_TEMPLATE_PATH, PROJECT_PATH);
+// console.log("Hello world!");
 
 // Run
 console.log("Start configure the project✨");
 console.log("==================================");
 
 console.log("Move boilerplate to your project✨");
-const movingFile = await moveFiles();
-if (!movingFile) process.exit(-1);
+await copyDirectory(LIBRARY_TEMPLATE_PATH, PROJECT_PATH);
 console.log("Successfully move boilerplate to your project🥳");
 
 console.log("Install all dependencies✨");

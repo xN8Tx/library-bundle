@@ -1,6 +1,6 @@
 {
   "name": "ts-rlb",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Typescript React Library Bundle. Work with storybook, loki and jest. Powered by Rollup",
   "main": "./bin/cli.js",
   "bin": "./bin/cli.js",
