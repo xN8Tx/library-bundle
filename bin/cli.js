@@ -1,10 +1,9 @@
 #! /usr/bin/env node
 
 import { execSync } from "child_process";
+import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-import { dirname } from "path";
 import fse from "fs-extra";
-import path from "path";
 
 const useCommand = async (command) => {
   try {
@@ -55,5 +54,6 @@ console.log("Successfully install all dependencies✨");
 console.log("==================================");
 console.log("Congratulation! Successfully configure the project🥳");
 console.log("");
-console.log(`To start development run: `);
-console.log(`cd ${PROJECT_NAME} && npm run storybook`);
+console.log(
+  `To start development run: cd ${PROJECT_NAME} && npm run storybook`
+);
